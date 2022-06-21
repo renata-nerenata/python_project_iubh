@@ -13,10 +13,12 @@ def to_sql(dataframe, filename, suffix):
     :param filename: name of dataframe
     :param suffix: a specific suffix
     """
-    engine = create_engine('sqlite:///{}.db'.format(filename), echo=False)
+    engine = create_engine("sqlite:///{}.db".format(filename), echo=False)
 
     dataframe_tosql = dataframe.copy()
-    dataframe_tosql.columns = [column.capitalize() + suffix for column in dataframe_tosql.columns]
+    dataframe_tosql.columns = [
+        column.capitalize() + suffix for column in dataframe_tosql.columns
+    ]
 
     try:
         dataframe_tosql.to_sql(

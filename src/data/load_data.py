@@ -6,14 +6,14 @@ def check_data_content(data):
         print("There is no x parameter")
     if len(data.columns) < 2:
         print("There is no y parameter")
-    print('Data is perfect!')
+    print("Data is perfect!")
 
 
 def load_data(filepath):
     """
     Parse local .csv file
     :param filepath:
-    :return:
+    :return: dataframe from .scv file
     """
     try:
         data = pd.read_csv(filepath)
@@ -21,4 +21,4 @@ def load_data(filepath):
 
         return data
     except FileNotFoundError:
-        print('There is no a file')
+        print("There is no a file")
