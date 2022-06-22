@@ -16,10 +16,10 @@ class Data(object):
 
 def init_data(train, trained_list=trained_list):
 
-    y1 = Data(train['x'], y_label=trained_list[0])
-    y2 = Data(train['x'], y_label=trained_list[1])
-    y3 = Data(train['x'], y_label=trained_list[2])
-    y4 = Data(train['x'], y_label=trained_list[3])
+    y1 = Data(train["x"], y_label=trained_list[0])
+    y2 = Data(train["x"], y_label=trained_list[1])
+    y3 = Data(train["x"], y_label=trained_list[2])
+    y4 = Data(train["x"], y_label=trained_list[3])
 
     list_of_func = [y1, y2, y3, y4]
 

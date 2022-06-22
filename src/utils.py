@@ -33,7 +33,6 @@ def find_all_ideal(ideal, train):
     return ideals_y
 
 
-
 def test_ideal(test, train, ideal, y_label, ideal_label):
     """
     :param test:
@@ -63,7 +62,7 @@ def test_ideal(test, train, ideal, y_label, ideal_label):
 
 
 def get_points(mapping, y_label):
-    match_label = y_label + "_matched"
+    match_label = "matched"
 
     x_points = mapping[mapping[match_label] == True]["x"]
     y_points = mapping[mapping[match_label] == True]["y"]
