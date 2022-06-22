@@ -36,7 +36,8 @@ clean:
 
 ## Lint using flake8
 lint:
-	poetry run flake8 gendiff
+	flake8
+	black
 
 ## Upload Data to S3
 sync_data_to_s3:
