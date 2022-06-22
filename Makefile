@@ -36,7 +36,7 @@ clean:
 
 ## Lint using flake8
 lint:
-	flake8 src
+	poetry run flake8 gendiff
 
 ## Upload Data to S3
 sync_data_to_s3:
@@ -142,3 +142,4 @@ help:
 		printf "\n"; \
 	}' \
 	| more $(shell test $(shell uname) = Darwin && echo '--no-init --raw-control-chars')
+
