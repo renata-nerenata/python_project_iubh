@@ -8,7 +8,10 @@ best fit out of the provided functions.
 
 ## Project structure
 ```
+├── main.py            <- Main execution file
+├── db.sqlite          <- Database with required data
 ├── LICENSE
+├── requirements.txt   <- List of used  libraries
 ├── Makefile           <- Makefile with commands like
 ├── README.md          <- The top-level README for developers using this project.
 ├── data
