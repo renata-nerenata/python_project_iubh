@@ -36,7 +36,6 @@ clean:
 
 ## Lint using flake8
 lint:
-	flake8
 	black
 
 ## Upload Data to S3

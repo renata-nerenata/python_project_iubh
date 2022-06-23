@@ -91,5 +91,5 @@ def vizualize_with_points(list_of_func):
     :return: scatter plot
     """
     for y in list_of_func:
-        x_points, y_points = get_points(y.mapping, y.y_label)
+        x_points, y_points = get_points(y.mapping)
         scatter_plot_with_points(y.x, y.y_ideal, x_points, y_points, y.y_label)

@@ -1,12 +1,17 @@
 import pandas as pd
+from src.exception import EmptyX, EmptyY, DataFormatError, CustomError
 
 
 def check_data_content(data):
     if "x" not in data.columns:
-        print("There is no x parameter")
+        raise EmptyX(data)
     if len(data.columns) < 2:
-        print("There is no y parameter")
-    print("Data is perfect!")
+        raise EmptyY(data)
+
+
+def check_data_type(data):
+    if data.shape != data._get_numeric_data().shape:
+        raise DataFormatError(data)
 
 
 def load_data(filepath):
@@ -18,7 +23,7 @@ def load_data(filepath):
     try:
         data = pd.read_csv(filepath)
         check_data_content(data)
-
+        check_data_type(data)
         return data
     except FileNotFoundError:
-        print("There is no a file")
+        raise CustomError("There is no a file")

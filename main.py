@@ -8,12 +8,17 @@ from src.utils import find_all_ideal, test_ideal
 from src.data.data_perpesentation import init_data, init_ideal
 import pandas as pd
 from src.data.final_data_format import final_data
+from database.push_data import df_to_sql
 
 
 def main():
     test = load_data("data/test.csv")
     train = load_data("data/train.csv")
     ideal = load_data("data/ideal.csv")
+
+    # Push data to database
+    df_to_sql(train, "training")
+    df_to_sql(ideal, "ideal")
 
     # Change names of the columns in train dataset
     train.columns = [
@@ -50,8 +55,8 @@ def main():
         [y1.mapping.matched, y2.mapping.matched, y3.mapping.matched, y4.mapping.matched]
     ).sum()
 
-    f = final_data(test, delta, match)
-    print(f.head())
+    final_dataframe = final_data(test, delta, match)
+    df_to_sql(final_dataframe, "final")
 
 
 if __name__ == "__main__":

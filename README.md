@@ -7,7 +7,7 @@ Python-program that uses training data to choose the four ideal functions which 
 best fit out of the provided functions.
 
 ## Project structure
-.
+```
 ├── LICENSE
 ├── Makefile           <- Makefile with commands like
 ├── README.md          <- The top-level README for developers using this project.
@@ -16,7 +16,7 @@ best fit out of the provided functions.
 │   ├── train.csv      <- 4 training datasets.
 │   └── test.csv       <- One test dataset.
 │
-├── reports            <- Generated analysis in LaTeX.
+├── reports            <- Generated report in LaTeX.
 │   └── figures        <- Generated figures to be used in reporting
 │
 ├── requirements.txt   <- The requirements file for reproducing the analysis environment
@@ -35,12 +35,17 @@ best fit out of the provided functions.
 ├──task                <- The test of the assignment
 │
 └──tests               <- Unit-tests
+```
 
 ## Environment
-Create an enviroment with all used libraries
+Create an environment with all used libraries
 
 ``` python -m venv env ```
 
 ``` source env/bin/activate ```
 
 ``` pip install -r requirements.txt ```
+
+## Run
+
+``` python main.py```

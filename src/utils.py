@@ -2,7 +2,7 @@ import pandas as pd
 from src.models.evaluation_score import squared_error
 import functools as ft
 import numpy as np
-from CONSTANTS import tolerance, trained_list
+from CONSTANTS import factor, trained_list
 
 
 def find_ideal(ideal, train, y_label):
@@ -49,7 +49,7 @@ def test_ideal(test, train, ideal, y_label, ideal_label):
         delta_label = "delta"
         match_label = "matched"
 
-        data[delta_label] = np.abs(data[ideal_label] - data["y"]) - tolerance * np.abs(
+        data[delta_label] = np.abs(data[ideal_label] - data["y"]) - factor * np.abs(
             data[y_label] - data[ideal_label]
         )
         data[match_label] = data[delta_label] <= 0
@@ -61,7 +61,11 @@ def test_ideal(test, train, ideal, y_label, ideal_label):
         print("Error! Code: {c}, Message, {m}".format(c=e.code, m=str(e)))
 
 
-def get_points(mapping, y_label):
+def get_points(mapping):
+    """
+    :param mapping: mapping with test funtion
+    :return: x_points, y_points
+    """
     match_label = "matched"
 
     x_points = mapping[mapping[match_label] == True]["x"]
