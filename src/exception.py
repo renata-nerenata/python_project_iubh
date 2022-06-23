@@ -14,6 +14,7 @@ class EmptyX(Exception):
     """
     Dataframe has X feature
     """
+
     def __init__(self, dataframe):
         self.dataframe = dataframe
 
@@ -25,8 +26,9 @@ class EmptyX(Exception):
 
 class EmptyY(Exception):
     """
-        Dataframe has Y feature
+    Dataframe has Y feature
     """
+
     def __init__(self, dataframe):
         self.dataframe = dataframe
 
