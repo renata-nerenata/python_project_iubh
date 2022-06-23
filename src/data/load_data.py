@@ -3,6 +3,11 @@ from src.exception import EmptyX, EmptyY, DataFormatError, CustomError
 
 
 def check_data_content(data):
+    """
+    Check data have x and y features
+    :param data:
+    :return:
+    """
     if "x" not in data.columns:
         raise EmptyX(data)
     if len(data.columns) < 2:
@@ -10,6 +15,11 @@ def check_data_content(data):
 
 
 def check_data_type(data):
+    """
+    Check that all data is numerical
+    :param data:
+    :return:
+    """
     if data.shape != data._get_numeric_data().shape:
         raise DataFormatError(data)
 

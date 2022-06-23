@@ -1,14 +1,15 @@
 import sqlite3
+from src.exception import SQLError
 
 
 def df_to_sql(dataframe, name_of_table):
     try:
-        dbcon = sqlite3.connect("db.sqlite")
+        db_engine = sqlite3.connect("db.sqlite")
     except Exception as err:
         raise SQLError(err)
     dataframe.to_sql(
         name_of_table,
-        con=dbcon,
+        con=db_engine,
         if_exists="replace",
         index=True,
     )

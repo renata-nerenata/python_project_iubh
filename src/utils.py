@@ -66,9 +66,13 @@ def get_points(mapping):
     :param mapping: mapping with test funtion
     :return: x_points, y_points
     """
-    match_label = "matched"
+    try:
+        match_label = "matched"
 
-    x_points = mapping[mapping[match_label] == True]["x"]
-    y_points = mapping[mapping[match_label] == True]["y"]
+        x_points = mapping[mapping[match_label] == True]["x"]
+        y_points = mapping[mapping[match_label] == True]["y"]
+
+    except Exception as e:
+        print("Error! Code: {c}, Message, {m}".format(c=e.code, m=str(e)))
 
     return x_points, y_points
